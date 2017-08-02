@@ -53,6 +53,16 @@ router.post('/login', function(req, res) {
 	});
 });
 
+router.post('/api/search', function(req, res) { 
+		regEx =  new RegExp(req.body.q, "gi");
+		test = [{author: regEx}, {description: regEx}];
+		Post.find({ $or: test }).sort('-uploadTime').exec(function(err, docs){
+	    if(err) return console.log(err);
+	    res.json(docs);
+	    res.end();		
+	});
+});
+
 router.use('/testUpload', uploadFile.router);
 router.use(express.static(path.join(__dirname, 'public')));
 router.get('*', function(req, res) {
@@ -106,16 +116,6 @@ router.post('/api/author', function(req, res) {
 	    if(err) return console.log(err);
 	    res.json(docs);	
 	    res.end();	
-	});
-});
-
-router.post('/api/search', function(req, res) { 
-		regEx =  new RegExp(req.body.q, "gi");
-		test = [{author: regEx}, {description: regEx}];
-		Post.find({ $or: test }).sort('-uploadTime').exec(function(err, docs){
-	    if(err) return console.log(err);
-	    res.json(docs);
-	    res.end();		
 	});
 });
 
