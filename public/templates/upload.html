@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container" ng-show="main.userIsLogin">
  <form ng-submit="submit()">
     <div class="row">
-        <label for="file" class="btn btn-primary">Select</label>
+        <label for="file" class="btn btn-primary">Выбрать</label>
         <input type="file" id="file" multiple />
-        <label class="btn btn-primary" for="upBtn" class="plus">Upload</label>	
+        <label class="btn btn-primary" for="upBtn" class="plus">Загрузить</label>	
         <input type="submit" id="upBtn" value="Upload" name="submit">
     </div>
     <div class="row">
@@ -13,4 +13,5 @@
     </div>
 </form>
 </div>
+<div class="alert alert-danger" ng-show="!main.userIsLogin"> Войдите в систему чтобы просматривать эту страницу. </div>
     <script src="js/uploadPage.js"></script> 

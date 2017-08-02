@@ -4,8 +4,12 @@ var imagesApp = angular.module("imagesApp", ['appRoutes', 'regController', 'logi
 
     imagesApp.controller("imagesController", function ($scope, $http, $window, $rootScope, $timeout) {
 
-    	var main = this;
+    	var _this = this;
     	var userIsLogin = true;
+
+        $(document).on('click',function(){
+            $('.collapse').collapse('hide');
+        });
 
     	$scope.submit = function (){
     		var formData = new FormData;
@@ -34,7 +38,7 @@ var imagesApp = angular.module("imagesApp", ['appRoutes', 'regController', 'logi
                
     		};
 
-    		formData.append('author', main.username);
+    		formData.append('author', _this.username);
 
     		$http.post('/testUpload', formData, {
     			transformRequest: angular.identity,
@@ -57,7 +61,7 @@ var imagesApp = angular.module("imagesApp", ['appRoutes', 'regController', 'logi
 
     	};
 
-		main.logout = function(){
+		_this.logout = function(){
 			$window.localStorage.removeItem('token');
             $window.localStorage.removeItem('subscribes');
 		};
@@ -68,17 +72,17 @@ var imagesApp = angular.module("imagesApp", ['appRoutes', 'regController', 'logi
 				$http({ method: 'POST', url: '/me' }).
 					then(function success(response) {
 						if(response.data.username) {
-							main.userIsLogin = true;
-							main.username = response.data.username;
-                            $rootScope.name = main.username;
+							_this.userIsLogin = true;
+							_this.username = response.data.username;
+                            $rootScope.name = _this.username;
 						} else {
-							main.username = '';
-							main.userIsLogin = false;
+							_this.username = '';
+							_this.userIsLogin = false;
 						};
 					});
 			} else {
-				main.username = '';
-				main.userIsLogin = false;
+				_this.username = '';
+				_this.userIsLogin = false;
 			};	
         });  
             

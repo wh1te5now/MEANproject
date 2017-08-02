@@ -23,16 +23,16 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/search">Search</a></li>
-            <li><a href="/upload" ng-show="main.userIsLogin">Upload</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/news" ng-show="main.userIsLogin">News</a></li>
+            <li><a href="/search" ng-show="main.userIsLogin">Поиск</a></li>
+            <li><a href="/upload" ng-show="main.userIsLogin">Загрузить</a></li>
+            <li><a href="/about">О проекте</a></li>
+            <li><a href="/news" ng-show="main.userIsLogin">Новости</a></li>
           </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/register" ng-show="!main.userIsLogin">Registration</a></li>
-              <li><a href="/login" ng-show="!main.userIsLogin">Login</a></li>
-              <li><a href="/profile" ng-show="main.userIsLogin">Profile</a></li>
-              <li><a href="/logout" ng-show="main.userIsLogin" ng-click="main.logout();">Logout</a></li>
+              <li><a href="/register" ng-show="!main.userIsLogin">Регистрация</a></li>
+              <li><a href="/login" ng-show="!main.userIsLogin">Логин</a></li>
+              <li><a href="/profile" ng-show="main.userIsLogin">Профиль</a></li>
+              <li><a href="/logout" ng-show="main.userIsLogin" ng-click="main.logout();">Выйти</a></li>
             </ul>  
         </div>
       </div>
@@ -50,7 +50,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p class="text-muted">All rights reserved. 2017.</p>
+        <p class="text-muted">Все права защищены. 2017.</p>
       </div>
     </footer>
 

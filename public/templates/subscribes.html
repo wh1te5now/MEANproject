@@ -1,8 +1,8 @@
-<div class="container">	
+<div class="container" ng-show="main.userIsLogin">	
 	<div class="container1" ng-controller="profileSubscribesCtrl as subscribes"> 
 		<a class="btn btn-primary" href="/profile">{{main.username}}</a>
-		<a class="btn btn-primary" href="/profile/subscribers">Подписчики {{subscribers.length}}</a>
-		<a class="btn btn-primary" href="/profile/subscribes">Подписки {{subscribes.length}}</a>
+		<a class="btn btn-primary" href="/profile/subscribers">Подписчики <span class="count">{{subscribers.length}}</span></a>
+		<a class="btn btn-primary" href="/profile/subscribes">Подписки <span class="count">{{subscribes.length}}</span></a>
 		<ul>
 			<li ng-repeat="sub in subscribes">
 				<a href="/profile_{{sub}}" class="sub btn"> {{ sub }} </a>
@@ -10,3 +10,5 @@
 		</ul>
 	</div>		
 </div>
+
+<div class="alert alert-danger" ng-show="!main.userIsLogin"> Войдите в систему чтобы просматривать эту страницу. </div>

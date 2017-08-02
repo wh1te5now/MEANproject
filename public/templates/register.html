@@ -1,14 +1,14 @@
    <div class="container">
 
       <form class="form-register" ng-submit="register.regUser(register.regData);">
-        <h2 class="form-register-heading">Please register</h2>
-        <label for="Login">Login:</label>
+        <h2 class="form-register-heading">Пожалуйста зарегистрируйтесь</h2>
+        <label for="Login">Логин:</label>
         <input type="text" id="Login" class="form-control" placeholder="Login" required autofocus ng-model="register.regData.username">
-        <label for="inputPassword">Password:</label>
+        <label for="inputPassword">Пароль:</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required ng-model="register.regData.password">
         <label for="inputEmail">Email:</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email" required ng-model="register.regData.email"></br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрироваться</button>
       </form>
       <div class="alert alert-success reg-success" ng-show="register.successMsg"> {{ register.successMsg }} </div>
       <div class="alert alert-danger reg-error" ng-show="register.errorMsg"> {{ register.errorMsg }} </div>

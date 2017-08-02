@@ -1,6 +1,7 @@
-<div class="postFull container">
+<div class="postFull container" ng-show="main.userIsLogin">
 	<div class="wrap">
 		<img class="img-responsive" ng-src=" {{post.post.src}} ">
 		<div class="descFull"> {{ post.post.description }} </div>
 	</div>
 </div>
+<div class="alert alert-danger" ng-show="!main.userIsLogin"> Войдите в систему чтобы просматривать эту страницу. </div>

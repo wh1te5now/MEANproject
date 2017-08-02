@@ -1,5 +1,5 @@
 
-<div class="container">	
+<div class="container" ng-show="main.userIsLogin">	
 	<div class="container1" ng-controller="profileCtrl as pCtrl"> 
 		<a class="btn btn-primary" href="/profile">{{main.username}}</a>
 		<a class="btn btn-primary" href="/profile/subscribers">Подписчики <span class="count">				
@@ -18,6 +18,8 @@
 		</ul>
 	</div>		
 </div>
+
+<div class="alert alert-danger" ng-show="!main.userIsLogin"> Войдите в систему чтобы просматривать эту страницу. </div>
 
 
 

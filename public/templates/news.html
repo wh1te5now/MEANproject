@@ -1,5 +1,5 @@
 
-<div class="newsContainer container">
+<div class="newsContainer container" ng-show="main.userIsLogin">
 	<div class="newsWrap" ng-repeat="image in images">
 		<img class="img-responsive" ng-src=" {{image.src}} ">
 		<div class="newsInfo"> Описание: {{image.description }}  <br>Автор: {{image.author}}; Загружено: {{image.uploadTime}}; 
@@ -7,3 +7,4 @@
 	</div>
 </div>
 
+<div class="alert alert-danger" ng-show="!main.userIsLogin"> Войдите в систему чтобы просматривать эту страницу. </div>
