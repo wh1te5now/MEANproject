@@ -1,0 +1,21 @@
+
+<div class="container">	
+	<div class="container1" ng-controller="profileCtrl as pCtrl"> 
+		<a class="btn btn-primary" href="/profile">{{main.username}}</a>
+		<a class="btn btn-primary" href="/profile/subscribers">Подписчики {{subscribers.length}}</a>
+		<a class="btn btn-primary" href="/profile/subscribes">Подписки {{subscribes.length}}</a>
+		<ul>
+			<li ng-repeat="post in posts" ng-attr-id=" {{ post._id }} ">
+				<div ng-click="pCtrl.delPost(post, $index)" class="glyphicon glyphicon-remove delBtn {{ 'delBtn-' + $index }}"></div>
+				<div ng-click="pCtrl.editPost(post, $index)" class="glyphicon glyphicon-pencil editBtn {{ 'editBtn-' + $index }}"></div>
+				<div ng-click="pCtrl.savePost(post, $index)" class="glyphicon glyphicon-ok saveBtn hide {{ 'saveBtn-' + $index }}"></div>
+				<textarea class="hide description {{ 'desc-' + $index }}" rows="3" wrap="soft" maxlength="50" autofocus> {{ post.description }} </textarea>
+				<a href="/post/{{post.author}}/{{post.src}}/{{post.description}}"><img ng-src="{{post.src}}" alt="картинка"></a>
+				<div class="descShow {{ 'descShow-' + $index }}"> {{ post.description }} </div>
+			</li>
+		</ul>
+	</div>		
+</div>
+
+
+

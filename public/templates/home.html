@@ -1,0 +1,18 @@
+<div ng-controller="homeCtrl as home"> 
+
+	<div class="search-panel">
+		<form class="searchForm" ng-submit="home.submit(query)">
+		    <input type="text" class="searchInp form-control" placeholder="Введите запрос" required ng-model="query">
+		    <button type="submit" class="searchBtn btn btn-default">Поиск</button>
+		</form>
+	</div>
+
+	<ul class="tiles">
+		<li ng-repeat="image in images">
+			<img ng-src="{{image.src}}">
+			<a href="profile_{{image.author}}" class="authorLink"> {{image.author}} </a>
+			<div class="descShow {{ 'descShow-' + $index }}"> {{image.description}} </div>
+		</li>
+	</ul>
+
+</div>

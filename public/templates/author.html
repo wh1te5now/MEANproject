@@ -1,0 +1,13 @@
+
+<div class="authorPanel">
+	<div class="userName">{{author.name}}</div>
+	<div class="subscribeBtn"><a class="subscribeLink" ng-click="author.subscribe(author.name, main.username)">Подписаться</a></div>
+</div>
+
+<ul class="tiles">
+	<li ng-repeat="image in images">
+		<img ng-src="{{image.src}}">
+		<div class="descShow {{ 'descShow-' + $index }}"> {{image.description}} </div>
+	</li>
+</ul>
+		

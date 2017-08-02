@@ -1,0 +1,12 @@
+<div class="container">	
+	<div class="container1" ng-controller="profileSubscribersCtrl as subscribers"> 
+		<a class="btn btn-primary" href="/profile">{{main.username}}</a>
+		<a class="btn btn-primary" href="/profile/subscribers">Подписчики {{subscribers.length}}</a>
+		<a class="btn btn-primary" href="/profile/subscribes">Подписки {{subscribes.length}}</a>
+		<ul>
+			<li ng-repeat="sub in subscribers">
+				<a href="/profile_{{sub}}" class="sub btn"> {{ sub }} </a>	
+			</li>
+		</ul>
+	</div>		
+</div>

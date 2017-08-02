@@ -1,0 +1,16 @@
+<div class="container">
+ <form ng-submit="submit()">
+    <div class="row">
+        <label for="file" class="btn btn-primary">Select</label>
+        <input type="file" id="file" multiple />
+        <label class="btn btn-primary" for="upBtn" class="plus">Upload</label>	
+        <input type="submit" id="upBtn" value="Upload" name="submit">
+    </div>
+    <div class="row">
+        <span id="output"></span>
+        <div class="alert alert-success upload-success" ng-show="successUploadMsg"> {{ successUploadMsg }} </div>
+        <div class="alert alert-danger upload-error" ng-show="errorUploadMsg"> {{ errorUploadMsg }} </div>
+    </div>
+</form>
+</div>
+    <script src="js/uploadPage.js"></script> 
