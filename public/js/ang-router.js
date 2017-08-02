@@ -4,6 +4,10 @@ angular.module('appRoutes', ['ngRoute'])
 		
 		$routeProvider
 
+		.when('/search', {
+			templateUrl: 'templates/search.html'
+		})
+
 		.when('/home', {
 			templateUrl: 'templates/home.html'
 		})
@@ -40,7 +44,7 @@ angular.module('appRoutes', ['ngRoute'])
 			controllerAs: 'author'			
 		})
 
-		.when('/post/:author/img/:postId/:description', {
+		.when('/:author/post/:postId', {
 			templateUrl: 'templates/post.html',
 			controller: 'postCtrl',
 			controllerAs: 'post'			
@@ -58,7 +62,7 @@ angular.module('appRoutes', ['ngRoute'])
 			templateUrl: 'templates/subscribers.html'
 		})		
 
-		.otherwise({ redirectTo: '/' })
+		.otherwise({ redirectTo: '/home' })
 
 		$locationProvider.html5Mode({
 			enabled: true,

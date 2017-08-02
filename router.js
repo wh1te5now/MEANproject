@@ -127,6 +127,16 @@ router.post('/api/subscribes', function(req, res) {
 	});
 });
 
+router.post('/api/getPost', function(req, res) {
+	Post.findOne({_id: req.body._id}).exec(function(err, docs){
+	    if(err) return console.log(err);
+	    res.json(docs);
+	    console.log(docs);
+	    res.end();		
+	});
+});
+
+
 router.post('/api/news', function(req, res) { 
 
 	console.log('news = ', req.body);

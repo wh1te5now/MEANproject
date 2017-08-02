@@ -1,6 +1,6 @@
 var imagesApp = angular.module("imagesApp", ['appRoutes', 'regController', 'loginController',
-     'homeController', 'profileController', 'postController', 'authorController', 'newsController',
-     'profileSubscribesController', 'profileSubscribersController']);
+     'profileController', 'postController', 'authorController', 'newsController',
+     'profileSubscribesController', 'profileSubscribersController', 'searchController']);
 
     imagesApp.controller("imagesController", function ($scope, $http, $window, $rootScope, $timeout) {
 
@@ -36,7 +36,7 @@ var imagesApp = angular.module("imagesApp", ['appRoutes', 'regController', 'logi
 
     		formData.append('author', main.username);
 
-    		$http.post('http://localhost:3000/testUpload', formData, {
+    		$http.post('/testUpload', formData, {
     			transformRequest: angular.identity,
     			headers: {
     				'Content-Type': undefined

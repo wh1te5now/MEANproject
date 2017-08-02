@@ -10,7 +10,7 @@
 				<div ng-click="pCtrl.editPost(post, $index)" class="glyphicon glyphicon-pencil editBtn {{ 'editBtn-' + $index }}"></div>
 				<div ng-click="pCtrl.savePost(post, $index)" class="glyphicon glyphicon-ok saveBtn hide {{ 'saveBtn-' + $index }}"></div>
 				<textarea class="hide description {{ 'desc-' + $index }}" rows="3" wrap="soft" maxlength="50" autofocus> {{ post.description }} </textarea>
-				<a href="/post/{{post.author}}/{{post.src}}/{{post.description}}"><img ng-src="{{post.src}}" alt="картинка"></a>
+				<a href="/{{post.author}}/post/{{post._id}}" ng-click="goToPost(post)"><img ng-src="{{post.src}}" alt="картинка"></a>
 				<div class="descShow {{ 'descShow-' + $index }}"> {{ post.description }} </div>
 			</li>
 		</ul>

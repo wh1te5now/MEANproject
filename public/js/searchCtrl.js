@@ -1,6 +1,6 @@
-angular.module('homeController', [])
+angular.module('searchController', [])
 
-	.controller('homeCtrl', function($http, $scope, $timeout) {
+	.controller('searchCtrl', function($http, $scope, $timeout) {
 		var _this = this;
 
 		_this.submit = function(query) {
@@ -9,7 +9,7 @@ angular.module('homeController', [])
 				q: query
 			};
 
-			$http.post('/api/home', data)
+			$http.post('/api/search', data)
 				.success(function(res){
 					if(!res.message){
 		    			$scope.images = res;
@@ -19,6 +19,5 @@ angular.module('homeController', [])
 	    };		
 
 	});
-
 
 
