@@ -109,7 +109,7 @@ router.post('/api/author', function(req, res) {
 	});
 });
 
-router.post('/api/home', function(req, res) { 
+router.post('/api/search', function(req, res) { 
 		regEx =  new RegExp(req.body.q, "gi");
 		test = [{author: regEx}, {description: regEx}];
 		Post.find({ $or: test }).sort('-uploadTime').exec(function(err, docs){

@@ -2,6 +2,13 @@
 	padding-top: 50px;
 }
 
+span.count {
+    background-color: rgba(100, 190, 234, 0.79);
+    padding: 3px 5px 1px 4px;
+    text-shadow: 0 0 5px black;
+    box-shadow: 0 0 1px black;
+}
+
 .footer {
 	background-color: #222;
 	text-align: center;

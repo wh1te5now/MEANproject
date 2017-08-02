@@ -2,8 +2,10 @@
 <div class="container">	
 	<div class="container1" ng-controller="profileCtrl as pCtrl"> 
 		<a class="btn btn-primary" href="/profile">{{main.username}}</a>
-		<a class="btn btn-primary" href="/profile/subscribers">Подписчики {{subscribers.length}}</a>
-		<a class="btn btn-primary" href="/profile/subscribes">Подписки {{subscribes.length}}</a>
+		<a class="btn btn-primary" href="/profile/subscribers">Подписчики <span class="count">				
+			{{subscribers.length}}</span></a>
+		<a class="btn btn-primary" href="/profile/subscribes">Подписки <span class="count">		
+			{{subscribes.length}}</span></a>
 		<ul>
 			<li ng-repeat="post in posts" ng-attr-id=" {{ post._id }} ">
 				<div ng-click="pCtrl.delPost(post, $index)" class="glyphicon glyphicon-remove delBtn {{ 'delBtn-' + $index }}"></div>
